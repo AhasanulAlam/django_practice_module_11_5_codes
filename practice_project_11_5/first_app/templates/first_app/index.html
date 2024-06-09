@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- Code here -->
+<h1>I am in the first app</h1>
+<h1 class="text-center my-5">~~~ : Our Menus : ~~~</h1>
+<div class="cart_container row row-cols-1 row-cols-md-3 row-cols-lg-4  g-4">
+    {% for i in meals %}
+
+    <div class="col">
+        <div class="card">
+          <img src="{{i.strMealThumb}}" class="card-img-top" alt="Meal image">
+          <div class="card-body">
+            <h5 class="card-title">{{ i.strMeal }}</h5>
+            <p class="card-text">Meal ID: {{ i.idMeal }}</p>
+            <p class="card-text">Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta...</p>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}
